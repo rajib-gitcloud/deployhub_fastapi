@@ -1,0 +1,18 @@
+{
+  "name": "deployhub_fastapi",
+  "framework": "FastAPI",
+  "category": "Backend - Python",
+  "runtime": "python",
+  "port": 8000,
+  "buildCommand": "pip install -r requirements.txt",
+  "startCommand": "uvicorn main:app --host 0.0.0.0 --port 8000 --workers 2",
+  "healthCheck": {
+    "path": "/api/health",
+    "expectedStatus": 200,
+    "timeoutSeconds": 10
+  },
+  "env": {
+    "PORT": "8000",
+    "APP_ENV": "production"
+  }
+}
